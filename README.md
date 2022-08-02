@@ -1,4 +1,4 @@
-# 自动化
+# vue3-vite
 - yarn
 - yarn dev
-- yarn build 
+- yarn build
