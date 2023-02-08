@@ -44,7 +44,7 @@ export default defineComponent({
           items.meta.index = hasRouteParent.showOrder
           }
         if (items?.children) {
-          items?.children.forEach((item) => {
+          items?.children.forEach((item: { name: string; meta: { hidden: boolean; title: string } }) => {
             const hasRoute = findMeunItem(item.name)
             if (hasRoute) {
               items.meta.hidden = false

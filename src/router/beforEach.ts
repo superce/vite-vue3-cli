@@ -9,15 +9,16 @@ router.beforeEach(async (to: any, from: any, next: any) => {
         store.commit('tabModule/ADD_TAB', { route: to.path, title: to.meta.title, name: to.name })
     }
     store.commit('tabModule/SET_TAB', to.path)
+    next()
     // 跳转页面之前判断有没有此页面权限
-    if (getToken()) {
-        if(typeof to.meta.title === 'string'){
-            document.title = to.meta.title
-        }
-        next()
-    } else if (to.path === '/login' || to.path === '/notallow') {
-        next()
-    } else {
-        next({ path: '/login', query: { redirect: to.fullPath } })
-    }
+    // if (getToken()) {
+    //     if(typeof to.meta.title === 'string'){
+    //         document.title = to.meta.title
+    //     }
+    //     next()
+    // } else if (to.path === '/login' || to.path === '/notallow') {
+    //     next()
+    // } else {
+    //     next({ path: '/login', query: { redirect: to.fullPath } })
+    // }
 })

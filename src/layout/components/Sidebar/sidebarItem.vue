@@ -86,9 +86,9 @@ export default defineComponent({
       })
 
       // 判断当前路由，是否有孩子children，以及孩子个数；
-      // if (showingChildren.length === 1) {
-      //   return true
-      // }
+      if (showingChildren.length === 1) {
+        return true
+      }
 
       // 如果没有孩子，则展示父级路由；
       if (showingChildren.length === 0) {
